@@ -1,0 +1,46 @@
+# Local secrets and credentials — never commit these.
+.env
+.env.*
+*.env
+auth.json
+*_key.json
+secrets/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Generated artifacts and local outputs
+outputs/
+*.stl
+*.off
+*.amf
+*.3mf
+!tests/fixtures/**
+
+# Usage ledger (local, may contain experiment metadata)
+ledger/
+*.ledger.jsonl
+
+# Python caches and build output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Editors and OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.tmp
+*.bak
+/tmp/

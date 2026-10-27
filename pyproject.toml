@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reforge"
+version = "0.1.0"
+description = "AI-assisted reconstruction of simple planar mechanical parts as parametric CAD"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "pillow>=10",
+]
+
+[project.optional-dependencies]
+# Live model integration (SAM / Muse Spark via OpenAI-compatible API).
+# Only needed for the live smoke test, never for the local pipeline or test suite.
+models = [
+  "openai>=1.0",
+  "meta-sam-parser>=0.1.0",
+]
+
+[project.scripts]
+reforge = "reforge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
